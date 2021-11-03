@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"strict": true,
+		"module": "CommonJS",
+		"declaration": true,
+		"declarationDir": ".",
+		"allowSyntheticDefaultImports": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowUnusedLabels": false,
+		"moduleResolution": "node",
+		"resolveJsonModule": true
+	},
+	"include": [
+		"*.ts"
+	],
+	"exclude": []
+}

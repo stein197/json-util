@@ -1,0 +1,40 @@
+{
+  "name": "@stein197/json-util",
+  "version": "1.0.0",
+  "description": "Tiny library that provides utility functions to work with JSON structures",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "clean": "clean",
+    "precompile": "npm run clean",
+    "compile": "tsc",
+    "pretest": "npm run compile",
+    "test": "mocha test.js",
+    "prebuild": "npm run compile",
+    "build": "browserify --standalone jsonUtil index.js | terser --compress --mangle --output jsonUtil.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stein197/json-util.git"
+  },
+  "keywords": [
+    "json",
+    "deep",
+    "equal"
+  ],
+  "author": "Nail' Gafarov <nil20122013@gmail.com> (https://gnail.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stein197/json-util/issues"
+  },
+  "homepage": "https://github.com/stein197/json-util#readme",
+  "devDependencies": {
+    "@stein197/ts-util": "^1.2.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.6",
+    "browserify": "^17.0.0",
+    "mocha": "^9.1.3",
+    "terser": "^5.9.0",
+    "typescript": "^4.4.4"
+  }
+}

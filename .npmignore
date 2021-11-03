@@ -1,0 +1,7 @@
+/tsconfig.json
+/*.js
+/*.ts
+/clean*
+!/index.js
+!/*.d.ts
+/*test*
