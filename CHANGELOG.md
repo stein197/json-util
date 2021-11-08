@@ -1,5 +1,6 @@
 # CHANGELOG
 ## [Unreleased]
+- `diff()`, `intersect()`
 
 ## [1.1.0](../../compare/1.0.0..1.1.0) - 2021-11-05
 ### Added
