@@ -24,8 +24,7 @@ export function equal(a: Json, b: Json): -1 | 1 | boolean {
 			majorObject = a;
 		}
 		const returnValue = aEntries.length === bEntries.length ? true : (aEntries.length < bEntries.length ? -1 : 1);
-		// @ts-ignore
-		const result = minorEntries.map(entry => entry[0] in majorObject ? equal(majorObject[entry[0]], entry[1]) : false).reduce((acc, v) => acc === true || acc === v ? v : false, true);
+		const result = minorEntries.map(entry => entry[0] in majorObject ? equal(majorObject[entry[0] as any], entry[1]) : false).reduce((acc, v) => acc === true || acc === v ? v : false, true);
 		return aEntries.length === bEntries.length ? result : (result ? returnValue : false);
     } else {
         return false;
