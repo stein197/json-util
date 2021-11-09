@@ -2,6 +2,10 @@
 ## [Unreleased]
 - `diff()`, `intersect()`
 
+## [1.1.1](../../compare/1.1.0..1.1.1) - 2021-11-09
+### Changed
+- Moved package `@stein197/ts-util` from `devDependencies` to `dependencies`
+
 ## [1.1.0](../../compare/1.0.0..1.1.0) - 2021-11-05
 ### Added
 - `strictlyEqual()` function

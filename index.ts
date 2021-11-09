@@ -1,4 +1,4 @@
-import type {Json} from "@stein197/ts-util";
+import type {Json, JsonArray, JsonObject} from "@stein197/ts-util";
 
 /**
  * Checks if two JSON structures are deeply equal. Compares only JSON values, comparing class instances and other than
@@ -15,7 +15,7 @@ export function equal(a: Json, b: Json): -1 | 1 | boolean {
 		const aEntries = Object.entries(a);
 		const bEntries = Object.entries(b);
 		let minorEntries: [string, Json][];
-		let majorObject: Exclude<Json, null | boolean | number | string>;
+		let majorObject: JsonArray | JsonObject;
 		if (aEntries.length < bEntries.length) {
 			minorEntries = aEntries;
 			majorObject = b;
@@ -24,7 +24,8 @@ export function equal(a: Json, b: Json): -1 | 1 | boolean {
 			majorObject = a;
 		}
 		const returnValue = aEntries.length === bEntries.length ? true : (aEntries.length < bEntries.length ? -1 : 1);
-		const result = minorEntries.map(entry => entry[0] in majorObject ? equal(majorObject[entry[0] as any], entry[1]) : false).reduce((acc, v) => acc === true || acc === v ? v : false, true);
+		// @ts-ignore
+		const result = minorEntries.map(entry => entry[0] in majorObject ? equal(majorObject[entry[0]], entry[1]) : false).reduce((acc, v) => acc === true || acc === v ? v : false, true);
 		return aEntries.length === bEntries.length ? result : (result ? returnValue : false);
     } else {
         return false;
