@@ -2,6 +2,12 @@
 ## [Unreleased]
 - `diff()`, `intersect()`
 
+## [1.1.3](../../compare/1.1.2..1.1.3) - 2022-04-24
+### Changed
+- Exported arrow functions are regular ones now
+### Fixed
+- `clone` function now has generic signature
+
 ## [1.1.2](../../compare/1.1.1..1.1.2) - 2021-11-09
 ### Changed
 - Upgraded `@stein197/ts-util` package version to `1.3.2`

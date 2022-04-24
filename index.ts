@@ -48,21 +48,27 @@ export function partlyEqual(base: Json, part: Json): boolean {
  * @param b Second object to compare.
  * @returns `true` if both objects are strictly deeply equal
  */
-export const strictlyEqual: (a: Json, b: Json) => boolean = (a, b) => equal(a, b) === true;
+export function strictlyEqual(a: Json, b: Json): boolean {
+	return equal(a, b) === true;
+}
 
 /**
  * Checks if passed argument is an array.
  * @param arg Object to check.
  * @return `true` if the argument is an array.
  */
-export const isArray = (arg: any): arg is any[] => Array.isArray(arg);
+export function isArray(arg: any): arg is any[] {
+	return Array.isArray(arg);
+}
 
 /**
  * Checks if passed argument is object and NOT an array.
  * @param arg Object to check.
  * @return `true` if the argument is an object literal.
  */
-export const isObject = (arg: any): arg is object => typeof arg === "object" && !isArray(arg);
+export function isObject(arg: any): arg is object {
+	return typeof arg === "object" && !isArray(arg);
+}
 
 /**
  * Checks if passed argument is empty. Argument considered as empty in following cases: empty string (""), empty object
@@ -70,11 +76,15 @@ export const isObject = (arg: any): arg is object => typeof arg === "object" && 
  * @param arg Object to check.
  * @returns `true` if the argument is empty
  */
-export const isEmpty = (arg: Json) => !(typeof arg === "string" || isArray(arg) ? arg : Object.entries(arg as any)).length;
+export function isEmpty(arg: Json): boolean {
+	return !(typeof arg === "string" || isArray(arg) ? arg : Object.entries(arg as any)).length;
+}
 
 /**
  * Perform deep object clone.
  * @param arg Object to clone.
  * @returns Cloned object.
  */
-export const clone: (arg: Json) => Json = arg => JSON.parse(JSON.stringify(arg));
+export function clone<T extends Json>(arg: T): T {
+	return JSON.parse(JSON.stringify(arg));
+}
