@@ -157,6 +157,11 @@ mocha.describe("isObject()", () => {
 mocha.describe("isEmpty()", () => {
 	const ie = jsonUtil.isEmpty;
 
+	mocha.it("null is empty", () => ae(ie(null), true));
+	mocha.it("true is not empty", () => ae(ie(true), false));
+	mocha.it("false is not empty", () => ae(ie(false), false));
+	mocha.it("0 is not empty", () => ae(ie(0), false));
+	mocha.it("number is not empty", () => ae(ie(1), false));
 	mocha.it("Empty string == true", () => ae(ie(emptyString), true));
 	mocha.it("Empty array == true", () => ae(ie(emptyArray), true));
 	mocha.it("Empty object == true", () => ae(ie(emptyObject), true));

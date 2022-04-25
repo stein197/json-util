@@ -77,7 +77,8 @@ export function isObject(arg: any): arg is object {
  * @returns `true` if the argument is empty
  */
 export function isEmpty(arg: Json): boolean {
-	return !(typeof arg === "string" || isArray(arg) ? arg : Object.entries(arg as any)).length;
+	const argType = typeof arg;
+	return arg == null || (argType === "string" || argType === "object") && !Object.values(arg).length;
 }
 
 /**

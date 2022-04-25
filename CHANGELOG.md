@@ -2,6 +2,10 @@
 ## [Unreleased]
 - `diff()`, `intersect()`
 
+## [1.1.4](../../compare/1.1.3..1.1.4) - 2022-04-25
+### Fixed
+- `isEmpty()` function now returns `false` for booleans and numbers.
+
 ## [1.1.3](../../compare/1.1.2..1.1.3) - 2022-04-24
 ### Changed
 - Exported arrow functions are regular ones now
