@@ -2,6 +2,10 @@
 ## [Unreleased]
 - `diff()`, `intersect()`
 
+## [1.2.0](../../compare/1.1.4..1.2.0) - 2022-07-07
+### Fixed
+- `clone()` method now does not use JSON parsing and stringifying utilities.
+
 ## [1.1.4](../../compare/1.1.3..1.1.4) - 2022-04-25
 ### Fixed
 - `isEmpty()` function now returns `false` for booleans and numbers.

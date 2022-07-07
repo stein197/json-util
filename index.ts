@@ -87,5 +87,10 @@ export function isEmpty(arg: Json): boolean {
  * @returns Cloned object.
  */
 export function clone<T extends Json>(arg: T): T {
-	return JSON.parse(JSON.stringify(arg));
+	if (typeof arg !== "object" || arg == null)
+		return arg;
+	const result: any = isArray(arg) ? [] : {}
+	for (const [key, value] of Object.entries(arg!))
+		result[key] = clone(value);
+	return result;
 }
